@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/LoginSignup.css';
-import API_URL from '../config';
+const API_URL = 'https://mood-journal-oc1k.onrender.com';
 
 export default function LoginSignup({ onLogin }) {
   const navigate = useNavigate();

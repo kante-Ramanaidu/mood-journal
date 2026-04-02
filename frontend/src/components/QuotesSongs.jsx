@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/QuotesSongs.css';
 
 import API_URL from '../config';
-const BACKEND_URL = API_URL;
+const BACKEND_URL  = 'https://mood-journal-oc1k.onrender.com';
 
 export default function QuotesSongs() {
   const location = useLocation();

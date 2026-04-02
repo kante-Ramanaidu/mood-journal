@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/MoodLogger.css';
-import API_URL from '../config';
+const API_URL ='https://mood-journal-1-gnkh.onrender.com';
 
 const availableTriggers = [
   'Work',

@@ -9,7 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import '../styles/MoodHistory.css';
-import API_URL from '../config';
+const API_URL = 'https://mood-journal-oc1k.onrender.com';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const moodsList = [

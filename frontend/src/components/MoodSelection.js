@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/MoodSelection.css';
-import API_URL from '../config';
+const API_URL = 'https://mood-journal-oc1k.onrender.com';
 const moods = [
   { id: 'happy', label: '😊', title: 'Happy', desc: 'Joyful, content, pleased' },
   { id: 'calm', label: '😌', title: 'Calm', desc: 'Relaxed, peaceful, at ease' },
