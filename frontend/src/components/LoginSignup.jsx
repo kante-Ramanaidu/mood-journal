@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/LoginSignup.css';
 import API_URL from '../config';
+
 export default function LoginSignup({ onLogin }) {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const mode = queryParams.get('mode'); // 'login' or 'signup'
+  const mode = queryParams.get('mode');
 
   const [isSignUp, setIsSignUp] = useState(mode === 'signup');
   const [email, setEmail] = useState('');
@@ -25,7 +26,10 @@ export default function LoginSignup({ onLogin }) {
     }
 
     try {
-     const url = `${API_URL}/api/auth/${isSignUp ? 'signup' : 'login'}`;
+      const url = `${API_URL}/api/auth/${isSignUp ? 'signup' : 'login'}`;
+      console.log('API_URL:', API_URL);
+      console.log('Full URL:', url);
+
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -35,14 +39,11 @@ export default function LoginSignup({ onLogin }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Authentication failed');
 
-      // ✅ Update parent state before clearing input
       onLogin && onLogin(email);
-
       setMessage(isSignUp ? 'Registration successful!' : 'Login successful!');
       setEmail('');
       setPassword('');
-
-      navigate('/mood'); // Redirect to MoodSelection
+      navigate('/mood');
     } catch (err) {
       setMessage(err.message);
     }
