@@ -61,7 +61,7 @@ Mood Journal is a full-stack emotional wellness app that helps you log your dail
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/mood-journal.git
+git clone https://github.com/kante-Ramanaidu/mood-journal
 cd mood-journal
 ```
 
